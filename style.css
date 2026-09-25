@@ -64,6 +64,14 @@ body {
   border-radius: 999px;
 }
 
+#welcome {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+
 .divider {
   border: none;
   height: 1px;
