@@ -18,3 +18,9 @@ if (isMorning) {
 }
 
 document.getElementById("welcome").textContent = message;
+
+// Secret Message 
+localStorage.setItem(
+  "It's a secret to everybody.",
+  "You weren't supposed to find this. Or were you."
+);
