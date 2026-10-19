@@ -126,23 +126,50 @@ section h2 {
   margin-bottom: 0;
 }
 
-
 #carousel {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-height: 300px;
-  overflow: hidden;
-  gap: 10px;
+  padding: 28px 0 32px;
+  perspective: 900px;          
 }
  
 #carousel img {
-  flex: 1 1 0;
-  min-width: 0;
-  height: 200px;
+  flex: none;
+  width: 30%;
+  aspect-ratio: 2 / 3;         
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+  animation: coverIn 0.6s ease;
+}
+ 
+#carousel img:nth-child(1) {
+  transform: rotateY(38deg) scale(0.85);
+  margin-right: -7%;
+  filter: brightness(0.6);
+  z-index: 1;
+  box-shadow: 0 8px 18px rgba(74, 59, 53, 0.25);
+}
+ 
+#carousel img:nth-child(2) {
+  transform: scale(1.12);
+  z-index: 2;
+  box-shadow: 0 16px 34px rgba(74, 59, 53, 0.4),
+              0 0 0 4px var(--panel);
+}
+ 
+#carousel img:nth-child(3) {
+  transform: rotateY(-38deg) scale(0.85);
+  margin-left: -7%;
+  filter: brightness(0.6);
+  z-index: 1;
+  box-shadow: 0 8px 18px rgba(74, 59, 53, 0.25);
+}
+ 
+@keyframes coverIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
  
 #buttons {
@@ -170,6 +197,7 @@ section h2 {
   background-color: var(--accent);
   color: var(--panel);
 }
+ 
 
  
 /* ---------- Footer ---------- */
