@@ -199,7 +199,6 @@ section h2 {
 }
  
 
-/* ---------- To-do list page ---------- */
 
 /* ---------- To-do list page ---------- */
 .todo-list {
@@ -362,6 +361,19 @@ section h2 {
   color: var(--panel);
 }
  
+
+/* ---------- Random Pokemon ---------- */
+.pokemon-ctr {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+ 
+.pokemon-ctr img {
+  width: 144px;
+  height: 144px;
+  image-rendering: pixelated; /* keeps the small sprite crisp when enlarged */
+}
  
 /* ---------- Footer ---------- */
 .page-footer {

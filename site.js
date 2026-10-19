@@ -69,3 +69,37 @@ setInterval(() => {
     currentImage++
     showImages()
 }, 5000)
+
+// Random Pokemon
+
+// Fetch a random pokemon and return the pokemon object
+const getRandomPokemon = async () => {
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + (Math.floor(Math.random() * 150) + 1)
+    const response = await fetch(url)
+    if (!response.ok) {
+        throw new Error('Could not load pokemon: ' + response.status)
+    }
+    const pokemonObj = await response.json()
+    return pokemonObj
+}
+
+// Create an image for the pokemon and add it to the page
+const renderPokemon = (pokemonObj) => {
+    const img = document.createElement('img')
+    img.src = pokemonObj.sprites.front_default
+    img.alt = pokemonObj.name
+    document.querySelector('.pokemon-ctr').append(img)
+    return pokemonObj
+}
+
+// Get the pokemon first, then render it
+const showRandomPokemon = async () => {
+    try {
+        const pokemonObj = await getRandomPokemon()
+        renderPokemon(pokemonObj)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+showRandomPokemon()
